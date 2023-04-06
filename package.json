@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://julieshapo.github.io/5th-element-filmoteka",
+  "homepage": "https://stark1269.github.io/Movieland",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /5th-element-filmoteka/"
+    "build": "parcel build src/*.html --public-url /Movieland/"
   },
   "repository": {
     "type": "git",
