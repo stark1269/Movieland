@@ -2,6 +2,8 @@ import { refs } from './refs';
 import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
 import { watched, queue } from './buttons';
+import { showSpinner, hideSpinner } from './loader-spinner';
+
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 
 const modalTheme = document.querySelector('.modal-movie');
@@ -19,21 +21,28 @@ export function onClickMovie(e) {
     return;
   }
   showMovieInfo(id);
+  showSpinner();
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
   body.style.overflow = 'hidden';
-}
+};
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
 async function showMovieInfo(id) {
   try {
     const results = await getMovieFullInfo(id);
+
+    hideSpinner();
+
     const geners = genresFormatModal(results.genres).join(', ');
+
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
       : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
+    
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
+
     const bodyDark = document.body.classList.contains('darkTheme');
     if (bodyDark) {
       modalTheme.classList.add('darkModal');
@@ -45,7 +54,7 @@ async function showMovieInfo(id) {
   } catch (error) {
     console.log(error.message);
   }
-}
+};
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
@@ -55,7 +64,7 @@ export function modalClose() {
   window.removeEventListener('keydown', onCloseModalKey);
   body.style.overflow = 'auto';
   refs.modalMovie.innerHTML = '';
-}
+};
 
 // Функция закрытия модалки при нажатии по бекдропу
 
@@ -65,7 +74,7 @@ export function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
   }
-}
+};
 
 // Функция которая закрывает модалку при нажатии на крестик
 
@@ -77,7 +86,7 @@ export function onBtnClickClose(e) {
     return;
   }
   modalClose();
-}
+};
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
@@ -86,7 +95,7 @@ function onCloseModalKey(e) {
     return;
   }
   modalClose();
-}
+};
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
@@ -184,4 +193,4 @@ function renderMarkupModalMovie(object, poster, geners) {
       </button>
       </div>
     </div>`;
-}
+};

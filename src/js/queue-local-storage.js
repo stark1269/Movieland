@@ -1,5 +1,3 @@
-// в локал сторіджі дані по фільмам бібліотеки треба зберігати як масив обєктів з усіма необхідними властивостями,
-// а не масив просто айдішників.
 import { queue } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
 import { onClickMovie, modalClose } from './modal-movie';
@@ -33,11 +31,11 @@ function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
   }
-}
+};
 
 if (!btnQueue) {
   return;
-}
+};
 
 btnQueue.addEventListener('click', markupQueue);
 
@@ -79,4 +77,4 @@ export function markupQueue(currentPage = 1) {
   createPagination(totalElements, 4, 3, ITEMS_PER_PAGES);
 
   firstFunctionRun = 1;
-}
+};

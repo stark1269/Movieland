@@ -1,5 +1,3 @@
-// в локал сторіджі дані по фільмам бібліотеки треба зберігати як масив обєктів з усіма необхідними властивостями,
-// а не масив просто айдішників.
 import { watched } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
 import {
@@ -17,6 +15,7 @@ const imgWatchedPlug = document.querySelector('.no-watched');
 const imgQueuePlug = document.querySelector('.no-queue');
 
 let ITEMS_PER_PAGES = 9;
+
 if (document.documentElement.clientWidth < 768) {
   ITEMS_PER_PAGES = 4;
 }

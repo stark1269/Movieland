@@ -16,7 +16,7 @@ function onTrailerBtnClick(e) {
   }
 
   showTrailer(id);
-}
+};
 
 let key = '';
 
@@ -35,7 +35,7 @@ async function showTrailer(id) {
   } catch (error) {
     console.log(error.message);
   }
-}
+};
 
 function showHideTrailer(e) {
   const instance = basicLightbox.create(
@@ -59,4 +59,4 @@ function showHideTrailer(e) {
       instance.close();
     }
   }
-}
+};

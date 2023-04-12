@@ -13,5 +13,4 @@ import './js/modal-team';
 import './js/buttons';
 import './js/trailer';
 import './js/geners';
-import './js/go-top';
 import './js/change-theme';

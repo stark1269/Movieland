@@ -1,0 +1,19 @@
+.header {
+  padding: 60px 0;
+
+  background-image: url('../images/header/header-mob.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include tablet {
+    background-image: url('../images/header/header-tab.jpg'),
+      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  }
+
+  @include desktop {
+    background-image: url('../images/header/header-desk.jpg'),
+      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  }
+}

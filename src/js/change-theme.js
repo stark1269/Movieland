@@ -25,7 +25,7 @@ function onLigthTheme() {
   }
   noWatchedText.classList.remove('darkText');
   noQueueText.classList.remove('darkText');
-}
+};
 
 function onDarkTheme() {
   header.classList.add('headerDark');
@@ -38,8 +38,8 @@ function onDarkTheme() {
   }
   noWatchedText.classList.add('darkText');
   noQueueText.classList.add('darkText');
-}
+};
 
 if (localStorage.theme === 'darkTheme') {
   onDarkTheme();
-}
+};

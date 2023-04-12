@@ -125,34 +125,6 @@
 
 //MAIN PAGE
 
-.logo-icon {
-  &:hover,
-  &:focus {
-    color: $colorBtnAccent;
-  }
-}
-
-.nav-title {
-  &:hover,
-  &:focus {
-    color: $colorBtnAccent;
-  }
-}
-
-.nav-list {
-  display: flex;
-}
-
-.nav-list-item {
-  position: relative;
-
-  &:hover,
-  &:focus {
-    background-color: $colorBtnAccent;
-    border: none;
-  }
-}
-
 .current {
   position: relative;
   display: block;

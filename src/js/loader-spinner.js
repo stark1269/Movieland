@@ -4,18 +4,10 @@ import { refs } from './refs';
 
 export function showSpinner() {
   refs.spinner.classList.remove('visually-hidden');
-}
+};
 
 // Функция прячет спинер
 
 export function hideSpinner() {
   refs.spinner.classList.add('visually-hidden');
-}
-
- window.onload = function () {
-    showSpinner();
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-       hideSpinner();
-    }, 500);
-  }
+};

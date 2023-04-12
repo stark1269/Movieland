@@ -1,8 +1,7 @@
-import debounce from 'lodash.debounce';
-import axios from 'axios';
 import { getMoviesByName } from './api-fetch';
 import { createMarkupOneCard } from './markup-cards';
 import { createPagination } from './pagination';
+import { showSpinner, hideSpinner } from './loader-spinner';
 
 const ITEMS_PER_PAGES = 20;
 
@@ -27,6 +26,7 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
+  showSpinner();
   
   const queryVal = event.currentTarget.elements.searchQuery.value.trim();
   searchError2.style.display = 'none';
@@ -44,13 +44,14 @@ function onFormSubmit(event) {
   input.value = name;
   renderSearchFilms(name, 1, 1);
   input.value = '';
-}
+};
 
 export async function renderSearchFilms(name, currentPage, firstPage) {
   try {
     if (name) {
       searchError.style.display = 'none';
       const response = await getMoviesByName(name, currentPage);
+      hideSpinner();
       if (response.results.length < 1) {
         searchError.style.display = 'flex';
         setTimeout(() => {
@@ -58,10 +59,9 @@ export async function renderSearchFilms(name, currentPage, firstPage) {
         }, 5000);
       }
       filmGallery.innerHTML = createMarkupOneCard(response.results);
-
       createPagination(response.total_results, 1, firstPage, ITEMS_PER_PAGES);
     }
   } catch (error) {
     console.log(error.message);
   }
-}
+};

@@ -61,4 +61,4 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-}
+};

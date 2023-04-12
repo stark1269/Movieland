@@ -2,7 +2,6 @@ import { getMoviesTrending } from './api-fetch';
 import { genresFormat } from './geners';
 import { refs } from './refs';
 import { createPagination } from './pagination';
-import { genresArray } from './watched-local-storage';
 
 const ITEMS_PER_PAGES = 20;
 
@@ -43,7 +42,7 @@ export function createMarkupOneCard(array) {
     `;
     })
     .join('');
-}
+};
 
 // Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов
 
@@ -58,4 +57,4 @@ export async function TrendingMovie(currentPage) {
   } catch (error) {
     console.log(error.message);
   }
-}
+};

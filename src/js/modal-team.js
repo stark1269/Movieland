@@ -164,7 +164,7 @@ function createTeamGallery(array) {
     modalTheme.classList.remove('darkModal');
     modalTheme.classList.add('ligthModal');
   }
-}
+};
 
 refs.openTeamModalBtn.addEventListener('click', openTeamModal);
 refs.closeTeamModalBtn.addEventListener('click', closeTeamModal);
@@ -173,19 +173,13 @@ function openTeamModal() {
   refs.body.classList.add('modal-open');
   refs.teamModal.classList.remove('is-hidden');
   refs.body.classList.add('no-scroll');
-}
+};
 
 function closeTeamModal() {
   refs.body.classList.remove('modal-open');
   refs.teamModal.classList.add('is-hidden');
   refs.body.classList.remove('no-scroll');
-}
-
-// function toggleModal() {
-//   document.body.classList.toggle('modal-open');
-//   refs.teamModal.classList.toggle('is-hidden');
-//   refs.body.classList.toggle('no-scroll');
-// }
+};
 
 refs.openTeamModalBtn.addEventListener('click', onTeamBtnClick);
 refs.body.addEventListener('keydown', onEscapeClick);
@@ -195,16 +189,16 @@ function onTeamBtnClick(event) {
   refs.teamModal.classList.remove('visually-hidden');
   refs.teamList.innerHTML = '';
   createTeamGallery(teamArray);
-}
+};
 
 function onEscapeClick(event) {
   if (event.code === 'Escape') {
     closeTeamModal();
   }
-}
+};
 
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
     closeTeamModal();
   }
-}
+};
