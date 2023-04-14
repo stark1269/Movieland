@@ -50,7 +50,7 @@ export function markupQueue(currentPage = 1) {
 
   btnWatched.style.backgroundColor = '';
   btnWatched.style.border = '';
-  btnQueue.style.backgroundColor = '#ff6b02';
+  btnQueue.style.backgroundColor = '#ff001b';
   btnQueue.style.border = 'none';
   btnWatched.disabled = false;
   btnQueue.disabled = true;

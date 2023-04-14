@@ -56,7 +56,7 @@ export function markupWatched(currentPage = 1) {
 
   btnQueue.style.backgroundColor = '';
   btnQueue.style.border = '';
-  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.backgroundColor = '#ff001b';
   btnWatched.style.border = 'none';
   btnWatched.disabled = true;
   btnQueue.disabled = false;
@@ -85,6 +85,6 @@ export function markupWatched(currentPage = 1) {
 
 document.addEventListener('DOMContentLoaded', markupWatched);
 document.addEventListener('DOMContentLoaded', () => {
-  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.backgroundColor = '#ff001b';
   btnWatched.style.border = 'none';
 });
